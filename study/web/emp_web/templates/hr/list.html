@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee list</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1> List </h1>
+<a href="/charts" class="btn btn-outline-success btn-lg">See chart</a>
+<a href="/hr/cnt" class="btn btn-outline-success">전체 사원수 조회</a>
+
+<table border="1">
+{% for emp in data %}
+    <tr>
+        <td><a href="/hr/update/{{emp.employee_id}}" style="text-decoration:none">{{emp.employee_id}}</a></td>
+        <td>{{emp.first_name}}</td>
+        <td>{{emp.last_name}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.phone_number}}</td>
+        <td>{{emp.hire_date}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.commission_pct}}</td>
+        <td>{{emp.manager_id}}</td>
+        <td><a href="/hr/cnt/{{emp.department_id}}" style="text-decoration:none">{{emp.department_id}}</a>
+        <td><a href="/hr/emp/{{emp.employee_id}}" style="text-decoration:none">Details</a></td>
+        <td><a href="/hr/delete/{{emp.employee_id}}" style="text-decoration:none">Delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+{% for d in data %}
+<tr>
+    {% if len(row) > 1 %}
+        {% for d in row %}
+            <td>{{d}}</td>
+        {% endfor %}
+    {% else %}
+        <td>{{row}}</td>
+    {% endif %}
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

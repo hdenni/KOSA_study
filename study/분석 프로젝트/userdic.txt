@@ -1,0 +1,6 @@
+﻿유니클로	NNP
+홍보대사	NNP
+유기아동	NNP
+초록우산	NNP
+불매	NNP
+탑텐	NNP

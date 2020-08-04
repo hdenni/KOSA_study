@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% if session["logFlag"]==True %}
+    {{ id }}님 로그인 성공<br>
+    <button onclick="location.href='/account/logout' ">로그아웃</button>
+{% else %}
+<form action="/account/login" method="post">
+    아이디: <input type="text" name="id"> <br>
+    비밀번호: <input type="password" name="pw"><br>
+    <input type="submit" value="로그인">
+</form>
+{% endif %}
+</body>
+</html>

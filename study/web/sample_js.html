@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>examples</title>
+<script>
+function calc(p4){
+	var p = [1200, 1300, 1000];
+	//var p4 = prompt("part 4?", "0");
+	var tag="";
+	var result = ((p[0] + p[1] + p[2])/3 <= p4)? "평균 이상입니다":"평균 미달입니다";
+
+	tag += '<table border=1> <tr> <td> </td> <td>판매량</td> </tr>'
+	for(var i=1; i<4; i++){
+		tag += '<tr>';
+		tag += '<td>' + i + '분기' + '</td>';
+		tag += '<td>' + p[i-1] + '</td>';
+		tag += '</tr>';
+	}
+	tag += '<tr> <td> 4분기 </td> <td>'+p4+'</td></tr>'
+	tag += '</table>';
+
+	document.write(tag);
+	document.write(result);
+}
+</script>
+</head>
+
+<body> 
+<h1>hello world</h1>
+<p>
+<h3>분기별 판매량</h3>
+<script>
+calc(prompt("part 4?", "0"))
+</script>
+</p>
+</body>
+
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee information</title>
+</head>
+<body>
+<h1> 사원정보 </h1>
+{% for k, v in data.items() %}
+{{k}} : {{v}} <br>
+
+{% endfor %}
+
+{#
+사원 번호: {{data["employee_id"]}} <br>
+이름: {{data["first_name"]}} <br>
+성: {{data["last_name"]}} <br>
+이메일: {{data["email"]}} <br>
+전화번호: {{data["phone_number"]}} <br>
+입사일: {{data["hire_date"]}} <br>
+직무아이디: {{data["job_id"]}} <br>
+급여: {{data["salary"]}} <br>
+보너스율: {{data["commission_pct"]}} <br>
+매니저아이디: {{data["manager_id"]}} <br>
+#}
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title> red and blue-jq </title>
+<style rel="stylesheet">
+.
+.red-button {
+	background-color:salmon
+}
+.blue-button {
+	background-color:lightskyblue
+}
+.red{
+	background-color:salmon
+}
+.blue{
+	background-color:lightskyblue
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1> Press Button </h1>
+<input type="button" id="red" value="빨강"  style="border:0; font-size:20px; padding: 5px 10px">
+<input type="button" id="blue" value="파랑" style="border:0; font-size:20px; padding: 5px 10px">
+													
+<div id="content"></div>
+<input type="text" id="result" disabled>			
+</body>
+<script>
+red_el = $("#red");
+blue_el = $("#blue");
+content_el = $("#content");
+result_el = $("#result");
+
+function red_blue_click(event){
+	red_el.removeAttr("class");
+	blue_el.removeAttr("class");
+	$("body").removeAttr("class");
+	
+	console.log(event.target.id);
+	
+	content_el.html(event.target.value);
+	result_el.val(event.target.value+'색');
+	if(event.target.id == red_el.attr("id")){
+		//$("body").attr("class", "red");
+		red_el.attr("class", "red");
+	} else {
+		//$("body").attr("class","blue");
+		blue_el.attr("class", "blue");
+	}
+	$("body").attr("class", event.target.id);
+};
+
+red_el.click(red_blue_click);
+blue_el.click(red_blue_click);
+</script>					
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee count</title>
+</head>
+<body>
+{% if type=="emp" %}
+사원의 수는 {{ data }}명 입니다.
+{% elif type=="dept" %}
+{{ dinfo['dept_name'] }} 부서의 id number는 {{ dinfo['dept_id'] }} 이며, <br>
+사원의 수는 {{ data }}명 입니다.
+{% endif %}
+</body>
+</html>
